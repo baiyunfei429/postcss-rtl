@@ -9,17 +9,17 @@ const {getDirRule, processSrcRule} = require('./rules');
 const {rtlifyDecl, ltrifyDecl} = require('./decls');
 const {isSelectorHasDir} = require('./selectors');
 
-const listBai = [];
+// const listBai = [];
 module.exports = postcss.plugin('postcss-rtl', options => (css) => {
   const keyframes = [];
   options = validateOptions(options);
-  listBai.push(css.source.input.file);
-  console.log(listBai.length, '长度===1111');
-  if (css.source.input.file.indexOf('/node_modules/') !== -1 || css.source.input.file.indexOf('/src/portals/mobile') !== -1) {
-    console.log(css.source.input.file, '======未执行1111');
+  // listBai.push(css.source.input.file);
+  // console.log(listBai.length, '长度===1111');
+  if (css.source?.input?.file?.indexOf('/node_modules/') !== -1 || css.source?.input?.file?.indexOf('/src/portals/mobile') !== -1) {
+    console.log(css.source?.input?.file, '======未执行1111');
     return false;
   }
-  console.log(css.source.input.file, '======ok111');
+  // console.log(css.source.input.file, '======ok111');
 
   const whitelist = new Set(options.whitelist);
   const blacklist = new Set(options.blacklist);
