@@ -12,9 +12,10 @@ const {isSelectorHasDir} = require('./selectors');
 module.exports = postcss.plugin('postcss-rtl', options => (css) => {
   const keyframes = [];
 
+  options = validateOptions(options);
   const filePath = css.source?.input?.file || '';
   let excludePath = options?.excludePath || [];
-  const excludePathType = Object.prototype.toString.call(options.excludePath);
+  const excludePathType = Object.prototype.toString.call(options?.excludePath);
   if (excludePathType === '[object String]') {
     excludePath = [excludePath];
   } else if (excludePathType !== '[object Array]') {
@@ -34,7 +35,6 @@ module.exports = postcss.plugin('postcss-rtl', options => (css) => {
     return;
   }
   console.log(filePath, '走到了这');
-  options = validateOptions(options);
   const whitelist = new Set(options.whitelist);
   const blacklist = new Set(options.blacklist);
 
