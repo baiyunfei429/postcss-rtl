@@ -1,6 +1,6 @@
 {
-  "name": "postcss-rtl",
-  "version": "1.7.3",
+  "name": "@baiyunfei429/postcss-rtl",
+  "version": "0.0.1",
   "description": "PostCSS plugin for RTL-optimizations",
   "keywords": [
     "postcss",
@@ -12,13 +12,13 @@
     "right to left",
     "left to right"
   ],
-  "author": "Vladimir Kalinichev <wrumly@gmail.com>",
+  "author": "baiyunfei429 <baiyunfei429@163.com>",
   "license": "MIT",
-  "repository": "https://github.com/vkalinichev/postcss-rtl",
+  "repository": "https://github.com/baiyunfei429/postcss-rtl",
   "bugs": {
-    "url": "https://github.com/vkalinichev/postcss-rtl/issues"
+    "url": "https://github.com/baiyunfei429/postcss-rtl/issues"
   },
-  "homepage": "https://github.com/vkalinichev/postcss-rtl",
+  "homepage": "https://github.com/baiyunfei429/postcss-rtl",
   "main": "lib/index.js",
   "files": [
     "src",

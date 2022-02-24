@@ -2,38 +2,11 @@
 
 ---
 
-## ⚠️ Unmaintained ⚠️
-
-The project is no longer maintained by the author.
 
 It still may be helpful for MVP or small projects but for large projects it will be better
 to choose [`rtl.css`](https://github.com/MohammadYounes/rtlcss) (which this plugins uses under the hood) directly.
 
-If you want to take care of this repo/npm package, you can contact author:
-- telegram: https://t.me/vkalinichev
-- mail: me@vkalinichev.com
-- or [create issue](https://github.com/vkalinichev/postcss-rtl/issues/new) in this repo
-
 ---
-[![npm][npm-img]][npm]
-[![Build Status][ci-img]][ci]
-[![npm][npm-dwnlds-img]][npm]
-[![Package Quality][quality-img]][quality]
-[![license][lic-img]][lic]
-
-[ci-img]:  https://img.shields.io/travis/vkalinichev/postcss-rtl.svg
-[ci]:      https://travis-ci.org/vkalinichev/postcss-rtl
-
-[npm-img]: https://img.shields.io/npm/v/postcss-rtl.svg
-[npm]:     https://npmjs.org/package/postcss-rtl
-
-[quality-img]: http://npm.packagequality.com/shield/postcss-rtl.svg
-[quality]: http://packagequality.com/#?package=postcss-rtl
-
-[lic-img]: https://img.shields.io/github/license/vkalinichev/postcss-rtl.svg
-[lic]:     https://github.com/vkalinichev/postcss-rtl/blob/master/License
-
-[npm-dwnlds-img]: https://img.shields.io/npm/dt/postcss-rtl.svg
 
 [PostCSS]-plugin for RTL-adaptivity
 
