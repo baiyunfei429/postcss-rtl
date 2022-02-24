@@ -20,19 +20,20 @@ module.exports = postcss.plugin('postcss-rtl', options => (css) => {
   } else if (excludePathType !== '[object Array]') {
     excludePath = [];
   }
+  let flag = true;
   if (excludePath.length > 0) {
-    let flag = true;
-    for (let i = 0; i < excludePath.length; i ++) {
+    for (let i = 0; i < excludePath.length; i += 1) {
       if (excludePath[i].test(filePath)) {
         console.log(filePath, '======未执行1');
         flag = false;
         return;
       }
     }
-    if (flag === false) {
-      return false;
-    }
   }
+  if (flag === false) {
+    return;
+  }
+  console.log(filePath, '走到了这');
   options = validateOptions(options);
   const whitelist = new Set(options.whitelist);
   const blacklist = new Set(options.blacklist);
@@ -229,5 +230,5 @@ module.exports = postcss.plugin('postcss-rtl', options => (css) => {
     /* set dir attrs */
     processSrcRule(rule, options);
   });
-  return false;
+  // return false;
 });
