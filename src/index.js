@@ -12,6 +12,10 @@ const {isSelectorHasDir} = require('./selectors');
 module.exports = postcss.plugin('postcss-rtl', options => (css) => {
   const keyframes = [];
 
+  if (css.source?.input?.file?.indexOf('/node_modules/') !== -1 || css.source?.input?.file?.indexOf('/src/portals/mobile') !== -1) {
+    console.log(css.source.input.file, '======未执行1');
+    return false;
+  }
   options = validateOptions(options);
   const whitelist = new Set(options.whitelist);
   const blacklist = new Set(options.blacklist);
