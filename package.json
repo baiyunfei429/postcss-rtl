@@ -1,6 +1,6 @@
 {
   "name": "@baiyunfei429/postcss-rtl",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "description": "PostCSS plugin for RTL-optimizations",
   "keywords": [
     "postcss",
