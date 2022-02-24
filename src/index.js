@@ -12,9 +12,26 @@ const {isSelectorHasDir} = require('./selectors');
 module.exports = postcss.plugin('postcss-rtl', options => (css) => {
   const keyframes = [];
 
-  if (css.source?.input?.file?.indexOf('/node_modules/') !== -1 || css.source?.input?.file?.indexOf('/src/portals/mobile') !== -1) {
-    console.log(css.source.input.file, '======未执行1');
-    return false;
+  const filePath = css.source?.input?.file || '';
+  let excludePath = options?.excludePath || [];
+  const excludePathType = Object.prototype.toString.call(options.excludePath);
+  if (excludePathType === '[object String]') {
+    excludePath = [excludePath];
+  } else if (excludePathType !== '[object Array]') {
+    excludePath = [];
+  }
+  if (excludePath.length > 0) {
+    let flag = true;
+    for (let i = 0; i < excludePath.length; i ++) {
+      if (excludePath[i].test(filePath)) {
+        console.log(filePath, '======未执行1');
+        flag = false;
+        return;
+      }
+    }
+    if (flag === false) {
+      return false;
+    }
   }
   options = validateOptions(options);
   const whitelist = new Set(options.whitelist);
